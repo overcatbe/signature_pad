@@ -1,0 +1,14 @@
+saveJPGButton.addEventListener("click", function (event) {
+  if (signaturePad.isEmpty()) {
+    alert("Please provide a signature first.");
+  } else {
+    var dataURL = signaturePad.toDataURL("image/jpeg");
+  //  document.getElementById("comment_result").innerHTML = dataURL;
+  //  document.getElementById("comment_result").innerHTML = image;
+    var image = new Image();
+    image.src = dataURL;
+    image.width = "180";
+    document.body.appendChild(image);
+    document.getElementById("thePlaceForImage").appendChild(image);
+  }
+});
